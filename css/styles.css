@@ -1,6 +1,6 @@
 body{
   margin: 0;
-  font-family: Verdana, Tahoma, sans-serif;
+  font-family: Verdana, sans-serif;
 }
 
 header{
@@ -27,6 +27,10 @@ main{
   padding: 0 16px;
 }
 
+.sp-menu #open.hide{
+  display: none;
+}
+
 .overlay{
   position: fixed;
   top: 0;
@@ -38,6 +42,12 @@ main{
   padding: 64px;
   opacity: 0;
   pointer-events: none;
+  transition: opacity .6s;
+}
+
+.overlay.show{
+  opacity: 1;
+  pointer-events:auto;
 }
 
 .overlay #close{
@@ -55,4 +65,22 @@ main{
 }
 .overlay li{
   margin-top:24px ;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s transform .3s;
+}
+
+.overlay.show li{
+  opacity: 1;
+  transform: none;
+}
+
+.overlay.show li:nth-child(1){
+  transition-delay: .1s;
+}
+.overlay.show li:nth-child(2){
+  transition-delay: .2s;
+}
+.overlay.show li:nth-child(3){
+  transition-delay: .3s;
 }
